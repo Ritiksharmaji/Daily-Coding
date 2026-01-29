@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Data-structure-Code.iml" filepath="$PROJECT_DIR$/.idea/Data-structure-Code.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MODULE - 4/MODULE - 4.iml" filepath="$PROJECT_DIR$/MODULE - 4/MODULE - 4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MODULE_2/MODULE_2.iml" filepath="$PROJECT_DIR$/MODULE_2/MODULE_2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MODULE_3/MODULE_3.iml" filepath="$PROJECT_DIR$/MODULE_3/MODULE_3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MODULE_5/MODULE_5.iml" filepath="$PROJECT_DIR$/MODULE_5/MODULE_5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Stack/Stack.iml" filepath="$PROJECT_DIR$/Stack/Stack.iml" />
+    </modules>
+  </component>
+</project>
