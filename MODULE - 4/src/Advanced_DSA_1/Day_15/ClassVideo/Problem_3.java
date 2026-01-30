@@ -3,8 +3,9 @@ package Advanced_DSA_1.Day_15.ClassVideo;
 import java.util.Arrays;
 
 // Q-4: sme logic with extra x (l, r, x) → add x to all elements from index l to r (inclusive)
+// Query=> query(i,x): add x to all the elements from i to n-i.
 public class Problem_3 {
-    // optimize apporach
+    // optimize approach
     public static void main(String[] args) {
 
         int[] A = {0, 0, 0, 0, 0};
@@ -22,7 +23,7 @@ public class Problem_3 {
         for (int q = 0; q < queries.length; q++) {
             int i = queries[q][0];
             int x = queries[q][1];
-
+            // adding data into that particular index
             diff[i] += x;
         }
 
@@ -31,7 +32,6 @@ public class Problem_3 {
         for (int i = 1; i < n; i++) {
             A[i] = A[i - 1] + diff[i];
         }
-
 
         System.out.println(Arrays.toString(A));
     }

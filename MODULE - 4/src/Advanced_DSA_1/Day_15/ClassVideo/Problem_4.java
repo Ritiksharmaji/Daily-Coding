@@ -2,9 +2,9 @@ package Advanced_DSA_1.Day_15.ClassVideo;
 
 import java.util.Arrays;
 
-// Q-3: Each query (i, j,x) means Add x to all elements from index i to N-1
+// Q-3: (l, r, x) → add x to all elements from index l to r (inclusive) --
 public class Problem_4 {
-    // optimize apporach
+    // optimize approach
     public static void main(String[] args) {
 
         int[] A = {0,0,0,0,0};

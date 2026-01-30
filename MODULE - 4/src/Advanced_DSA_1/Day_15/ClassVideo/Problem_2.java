@@ -2,11 +2,11 @@ package Advanced_DSA_1.Day_15.ClassVideo;
 
 import java.util.Arrays;
 
-// Q-1: Given an integer
-// array A of size N, return the subarray which has the maximum sum
+// Q-1: Given an integer array A of size N, return the subarray which has the maximum sum
 public class Problem_2 {
     public static void main(String[] args){
-        int[] A = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
+//        int[] A = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
+        int[] A = {0, 0, 0, 0, 0};
 
         int currentSum = A[0];
         int maxSum = A[0];
