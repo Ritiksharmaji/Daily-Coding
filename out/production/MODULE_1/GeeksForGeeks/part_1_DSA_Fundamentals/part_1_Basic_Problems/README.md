@@ -493,3 +493,184 @@ Output : 19
 Explanation:  The series is: 1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21..... Thus,10th term is 19.
 ```
 code:
+```java
+// Q:8 Nth Term of AP(Nth term of AP from First Two Terms)
+
+import java.util.Arrays;
+
+public class Problem_8 {
+    // creating prefix-sum
+    public static int[] prefix(int[] a , int variant,int first){
+        int[] prefix = new int[a.length];
+        prefix[0] = first;
+        for(int i = 1; i<a.length; i++){
+            prefix[i] = variant + prefix[i-1];
+        }
+        return prefix;
+    }
+
+    public static void main(String[] args)
+    {
+        int a1 = 1, a2=3 , x = 10;
+        int variant = a2 - a1;
+        int[] array = new int[x];
+
+        int[] ans = prefix(array, variant, a1);
+        System.out.println("array is:"+ Arrays.toString(ans));
+    }
+}
+output is: array is:[1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
+```
+Nice question 👍 — and good that you’re thinking about **time & space complexity**, that’s very interview-relevant.
+
+Let’s analyze your code **line by line** and then give the **final complexity**.
+
+---
+
+## 🔹 What your code is doing
+
+You want to find the **Nth term of an AP**, but instead of using the formula, you are:
+
+* Creating an array of size `x`
+* Building the **entire AP sequence** using a prefix-like approach
+
+Example:
+
+```
+a1 = 1
+a2 = 3
+Common difference (d) = 2
+x = 10
+
+Generated AP:
+[1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
+```
+
+---
+
+## 🧠 Time Complexity Analysis
+
+### Method: `prefix()`
+
+```java
+for (int i = 1; i < a.length; i++) {
+    prefix[i] = variant + prefix[i - 1];
+}
+```
+
+* Loop runs **n = a.length = x** times
+* Each iteration does **O(1)** work
+
+### ✅ Time Complexity
+
+```
+O(n)
+```
+
+(where `n = x`, number of terms)
+
+---
+
+## 🧠 Space Complexity Analysis
+
+### Extra memory used:
+
+```java
+int[] prefix = new int[a.length];
+```
+
+* You allocate a new array of size `n`
+
+### ✅ Space Complexity
+
+```
+O(n)
+```
+
+---
+
+## 📊 Final Complexity Summary
+
+| Metric           | Value    |
+| ---------------- | -------- |
+| Time Complexity  | **O(n)** |
+| Space Complexity | **O(n)** |
+
+---
+
+## ❗ Important Interview Insight
+
+> For **finding only the Nth term of an AP**, this approach is **overkill**.
+
+---
+## [Naive Approach] - Using for Loop 
+In an Arithmetic Series, the difference between all pair of consecutive terms is same, for example, 2, 5, 8, 11, 14,,,,, The common difference is 3.
+
+- Find the common difference of the series, common difference d = a2 - a1
+- Run a loop to iterate over each term in the series from a1, keep adding common difference d until the n-th term is reached.
+- Time Complexity - O(n) and Auxiliary Space - O(1)
+
+```java
+public class Main {
+    public static int nthTermOfAP(int a1, int a2, int n)
+    {
+        int nthTerm = a1, d = a2 - a1;
+        for (int i = 1; i < n; i++) {
+            nthTerm += d;
+        }
+        return nthTerm;
+    }
+
+    public static void main(String[] args)
+    {
+        int a1 = 2, a2 = 3;
+        int n = 4;
+        System.out.println(nthTermOfAP(a1, a2, n));
+    }
+}
+output is: 5
+```
+## 🔥 Optimized Approach (Best for Interviews)
+
+### Formula:
+
+```
+Nth term = a1 + (n - 1) * d
+```
+
+### Java Code:
+
+```java
+int nthTerm = a1 + (x - 1) * variant;
+```
+
+### Complexity:
+
+| Metric | Value    |
+| ------ | -------- |
+| Time   | **O(1)** |
+| Space  | **O(1)** |
+
+---
+
+## 🎤 Interview Explanation (Perfect Answer)
+
+> “My current solution builds the entire AP sequence, which takes O(n) time and space.
+> However, since we only need the Nth term, we can use the AP formula to get it in constant time and space.”
+
+---
+
+## 🔑 Final Takeaway Rule
+
+| Task               | Best Approach         |
+| ------------------ | --------------------- |
+| Generate entire AP | O(n) time, O(n) space |
+| Find only Nth term | O(1) time, O(1) space |
+
+If you want next:
+
+* Convert this to **prefix-sum intuition**
+* Handle **large values (overflow)**
+* Compare **loop vs formula in interviews**
+
+Just tell me 💪
